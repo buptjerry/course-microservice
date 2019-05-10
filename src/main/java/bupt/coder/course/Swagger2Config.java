@@ -20,7 +20,7 @@ public class Swagger2Config {
                 .apiInfo(apiInfo())
                 .select()
                 // 自行修改为自己的包路径
-                .apis(RequestHandlerSelectors.basePackage("bupt.usermicroservice.controller"))
+                .apis(RequestHandlerSelectors.basePackage("bupt.coder.course"))
                 .paths(PathSelectors.any())
                 .build();
     }
