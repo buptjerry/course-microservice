@@ -41,8 +41,8 @@ public class CourseControllerTest {
         String content = "{\n" +
                 "  \"name\": \"NewCourse\",\n" +
                 "  \"teacherId\": 1,\n" +
-                "  \"startTime\": \"2019-01-01\",\n" +
-                "  \"endTime\": \"2019-06-29\",\n" +
+                "  \"startTime\": \"2019-04-01\",\n" +
+                "  \"endTime\": \"2019-07-17\",\n" +
                 "  \"place\": \"学六339\"\n" +
                 "}";
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.put(bashUrl).content(content).contentType(MediaType.APPLICATION_JSON)).andReturn();
