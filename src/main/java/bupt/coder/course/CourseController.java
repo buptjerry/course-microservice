@@ -22,15 +22,14 @@ public class CourseController {
     @DeleteMapping("/{id}")
     @ApiOperation("删")
     public void delete(@PathVariable long id) {
-        Course course = courseRepository.getOne(id);
+        Course course = courseRepository.findById(id).get();
         courseRepository.delete(course);
     }
 
     @PostMapping("/{id}")
     @ApiOperation("改")
     public void update(@RequestBody Course course, @PathVariable long id) {
-        Course old = courseRepository.getOne(id);
-        old.setId(course.getId());
+        Course old = courseRepository.findById(id).get();
         old.setEndTime(course.getEndTime());
         old.setName(course.getName());
         old.setPlace(course.getPlace());
@@ -42,7 +41,7 @@ public class CourseController {
     @GetMapping("/{id}")
     @ApiOperation("查指定课程")
     public Course find(@PathVariable long id) {
-        return courseRepository.getOne(id);
+        return courseRepository.findById(id).get();
     }
 
     @GetMapping
